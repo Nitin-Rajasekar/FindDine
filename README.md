@@ -1,25 +1,95 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/qt90yYHw)
-# Project Assignment: Zomato Restaurant Listing & Searching
- 
-## Key Use Cases
- 
-### Data Loading
-Create an independent script to load the Zomato restaurant data available [here](https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data) into a database.
- 
-### Web API Service
-Develop a web API service with the following endpoints to serve the content loaded in the previous step:
-  - **Get Restaurant by ID**: Retrieve details of a specific restaurant by its ID.
-  - **Get List of Restaurants**: Fetch a list of restaurants with pagination support.
- 
-### User Interface
-Develop a web application with the following pages, which must connect to the web API service:
-  - **Restaurant List Page**: Display a list of restaurants. Clicking on a restaurant should navigate the user to the restaurant's detail page.
-  - **Restaurant Detail Page**: Show details of a specific restaurant.
- 
-## Additional Use Cases (Optional)
-If time allows, implement the following additional features, ensuring they are supported in both the API and the UI:
-- **Filtering Options**:
-  - By Country
-  - By Average Spend for Two People
-  - By Cuisines
-- **Search Functionality**: Enable search for restaurants by name and description.
+
+# FindDine
+
+### Overview
+
+FindDine is a full-stack web application that manages and searches through restaurant listings using Zomato's dataset. Broadly, it allows users to view detailed information about prospective restaurants, such as their location, cuisine, ratings, availability etc. It also allows users to search for restaurants by name, cuisine, location, price etc., or a combination of these.
+
+
+![FindDine](images/List.png)
+
+![FindDine](images/Details.png)
+
+
+### Tech Stack
+
+The application utilizes the following technologies:
+- Flask (Python) for the backend
+- React (JavaScript) for the frontend
+- SQLite for the database
+
+
+### Prerequisites
+
+- Python 3.7 or higher
+- Node.js
+- npm
+- SQLite
+
+
+### Execution
+
+1. Clone the repository
+    ```
+    git clone https://github.com/e42-typeface-ai/tf-round-2-assign-Nitin-Rajasekar/tree/main
+    ````
+
+
+2. Navigate to the 'Backend' directory
+
+    ```
+    cd tf-round-2-assign-Nitin-Rajasekar
+    cd backend
+
+    ```
+
+3. Create a virtual environment
+
+    ```
+    python3 -m venv venv
+    source venv/bin/activate (if you are using a Unix-based system)
+    venv\Scripts\activate (if you are using a Windows system)
+    ```
+
+4. Install the required packages
+    Run the following command:
+    ```
+    pip install -r requirements.txt
+    ```
+5. Run the Flask server
+    Run the following command:
+    ```
+    python app.py
+    ```
+6. Navigate to the 'Frontend' directory
+    ```
+    cd ../frontend
+    ```
+7. Install the required packages
+    Run the following command:
+    ```
+    npm install
+    ```
+8. Run the React server
+    Run the following command:
+    ```
+    npm start
+    ```
+9. Open your browser and navigate to 'http://localhost:3000/'
+
+
+### Handling Key Use Cases
+
+- An independent script to load the zomato data into the SQLite database is located at backend/load_data.py. 
+- The Web API Service to serve the loaded content is located at backend/app.py.
+- The user interface for the Restaurant List Page and Restaurant Detail Page may be accessed at frontend/src/components/RestaurantListPage.js and frontend/src/components/RestaurantDetailPage.js respectively.
+
+### Acknowledgements
+
+I would like to thank Typeface for providing the opportunity to work on this project.
+
+
+
+
+
+
