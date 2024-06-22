@@ -31,7 +31,7 @@ The application utilizes the following technologies:
 
 1. Clone the repository
     ```
-    git clone https://github.com/e42-typeface-ai/tf-round-2-assign-Nitin-Rajasekar/tree/main
+    git clone https://github.com/e42-typeface-ai/tf-round-2-assign-Nitin-Rajasekar.git
     ````
 
 
