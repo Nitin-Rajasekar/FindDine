@@ -1,35 +1,30 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import the CORS module
+from flask_cors import CORS
 import sqlite3
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-
-country_code_mapping = {
-    1: 'India',
-    14: 'Australia',
-    30: 'Brazil',
-    37: 'Canada',
-    94: 'Indonesia',
-    148: 'New Zealand',
-    162: 'Phillipines',
-    166: 'Qatar',
-    184: 'Singapore',
-    189: 'South Africa',
-    191: 'Sri Lanka',
-    208: 'Turkey',
-    214: 'UAE',
-    215: 'United Kingdom',
-    216: 'United States'
-    # Add other country codes and names as needed
-}
-
 
 # Function to connect to the database
 def get_db_connection():
     conn = sqlite3.connect('zomato.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+# Function to fetch country codes and names from the database
+def fetch_country_codes():
+    conn = get_db_connection()
+    countries = conn.execute('SELECT * FROM countries').fetchall()
+    conn.close()
+    
+    # debugging:
+    # for country in countries:
+    #     print(dict(country))
+    
+    return {country['Country Code']: country['Country'] for country in countries}
+
+# Fetch country codes at startup
+country_code_mapping = fetch_country_codes()
 
 # Endpoint to get restaurant by ID
 @app.route('/restaurant/<int:restaurant_id>', methods=['GET'])
@@ -84,16 +79,12 @@ def get_restaurants():
 
     return jsonify([dict(row) for row in restaurants])
 
-
-
-
 @app.route('/currencies', methods=['GET'])
 def get_currencies():
     conn = get_db_connection()
     currencies = conn.execute('SELECT DISTINCT currency FROM restaurants').fetchall()
     conn.close()
     return jsonify([currency['currency'] for currency in currencies])
-
 
 @app.route('/cuisines', methods=['GET'])
 def get_cuisines():
@@ -120,9 +111,5 @@ def get_countries():
 
     return jsonify(unique_countries)
 
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
-
