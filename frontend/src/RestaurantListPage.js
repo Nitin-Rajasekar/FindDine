@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './RestaurantListPage.css'; // Import the CSS file for styling
 
 function RestaurantListPage() {
+  // State variables for storing fetched data and user inputs
   const [restaurants, setRestaurants] = useState([]);
   const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
@@ -94,6 +95,11 @@ function RestaurantListPage() {
 
   return (
     <div className="container">
+      <div className="header">
+        
+        
+        <h1 className="logo">FindDine</h1>
+      </div>
       <h1 className="title">Restaurant List</h1>
       {error && <div className="error">Error: {error.message}</div>}
 

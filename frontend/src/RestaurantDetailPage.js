@@ -48,6 +48,9 @@ function RestaurantDetailPage() {
 
   return (
     <div className="container">
+      <div className="header">
+        <h1 className="logo">FindDine</h1>
+      </div>
       <h1 className="title">{restaurant.restaurant_name}</h1>
       <div className="detail">
         <p><strong>Address:</strong> {restaurant.address}</p>
