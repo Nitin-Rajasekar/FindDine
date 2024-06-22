@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff4081, #81d4fa);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filters input, .filters select, .filters button {
+  flex: 1 1 200px;
+  padding: 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+
+.filters input, .filters select {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.filters input:focus, .filters select:focus {
+  border: 2px solid #007BFF;
+  outline: none;
+}
+
+.filters button {
+  background-color: #ff4081;
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #e91e63;
+}
+
+.restaurant-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.restaurant-item {
+  padding: 20px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-info {
+  flex-grow: 1;
+}
+
+.restaurant-name {
+  color: #333;
+  font-weight: 700;
+  font-size: 1.2em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.restaurant-rating {
+  color: #777;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.restaurant-link:hover .restaurant-name {
+  color: #ff4081;
+}
+
+.status-box {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status-box.green {
+  background-color: #4caf50;
+  color: white;
+}
+
+.status-box.red {
+  background-color: #f44336;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 15px 25px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #e91e63;
+}
+
+.error {
+  color: #f44336;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}

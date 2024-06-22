@@ -1,0 +1,32 @@
+# Python
+
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/venv/
+backend/instance/
+backend/.env
+
+
+
+# Node
+
+frontend/node_modules/
+frontend/build/
+
+
+# React
+frontend/build/
+.DS_Store
+*.log
+frontend/.env
+
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.db
