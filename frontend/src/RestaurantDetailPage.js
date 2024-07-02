@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'; // Import React and hooks for state and side effects
-import { useParams } from 'react-router-dom'; // Import useParams to access URL parameters
-import './RestaurantDetailPage.css'; // Import the CSS file for styling
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import './RestaurantDetailPage.css';
 
 function RestaurantDetailPage() {
-  const { id } = useParams(); // Get the 'id' parameter from the URL
-  const [restaurant, setRestaurant] = useState(null); // State to hold the restaurant details
-  const [error, setError] = useState(null); // State to hold any errors
+  const { id } = useParams();
+  const [restaurant, setRestaurant] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch restaurant details from the backend API when the component mounts or the id changes
     fetch(`http://localhost:5000/restaurant/${id}`)
       .then(response => {
         if (!response.ok) {
@@ -17,7 +16,7 @@ function RestaurantDetailPage() {
         return response.json();
       })
       .then(data => {
-        console.log('Fetched data:', data); // Log the fetched data
+        console.log('Fetched data:', data);
         setRestaurant(data);
       })
       .catch(error => {
@@ -26,7 +25,6 @@ function RestaurantDetailPage() {
       });
   }, [id]);
 
-  // Function to render stars based on the price range
   const renderStars = (priceRange) => {
     const stars = [];
     for (let i = 0; i < priceRange; i++) {

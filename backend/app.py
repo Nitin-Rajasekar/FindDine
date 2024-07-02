@@ -3,30 +3,21 @@ from flask_cors import CORS
 import sqlite3
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
-# Function to connect to the database
 def get_db_connection():
     conn = sqlite3.connect('zomato.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-# Function to fetch country codes and names from the database
 def fetch_country_codes():
     conn = get_db_connection()
     countries = conn.execute('SELECT * FROM countries').fetchall()
     conn.close()
-    
-    # debugging:
-    # for country in countries:
-    #     print(dict(country))
-    
     return {country['Country Code']: country['Country'] for country in countries}
 
-# Fetch country codes at startup
 country_code_mapping = fetch_country_codes()
 
-# Endpoint to get restaurant by ID
 @app.route('/restaurant/<int:restaurant_id>', methods=['GET'])
 def get_restaurant(restaurant_id):
     conn = get_db_connection()
@@ -36,7 +27,6 @@ def get_restaurant(restaurant_id):
         return jsonify({'error': 'Restaurant not found'}), 404
     return jsonify(dict(restaurant))
 
-# Endpoint to get list of restaurants with filtering, searching, and pagination
 @app.route('/restaurants', methods=['GET'])
 def get_restaurants():
     page = request.args.get('page', 1, type=int)
@@ -91,11 +81,10 @@ def get_cuisines():
     conn = get_db_connection()
     cuisines = conn.execute('SELECT DISTINCT cuisines FROM restaurants').fetchall()
     conn.close()
-    
-    # Extract unique cuisines
+
     unique_cuisines = set()
     for row in cuisines:
-        if row['cuisines']:  # Check if the value is not None
+        if row['cuisines']:
             for cuisine in row['cuisines'].split(','):
                 unique_cuisines.add(cuisine.strip())
 
@@ -106,7 +95,7 @@ def get_countries():
     conn = get_db_connection()
     countries = conn.execute('SELECT DISTINCT country_code FROM restaurants').fetchall()
     conn.close()
-    
+
     unique_countries = [{'code': row['country_code'], 'name': country_code_mapping.get(row['country_code'], 'Unknown')} for row in countries]
 
     return jsonify(unique_countries)

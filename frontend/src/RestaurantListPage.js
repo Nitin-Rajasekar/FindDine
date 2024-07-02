@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './RestaurantListPage.css'; // Import the CSS file for styling
+import './RestaurantListPage.css';
 
 function RestaurantListPage() {
-  // State variables for storing fetched data and user inputs
   const [restaurants, setRestaurants] = useState([]);
   const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
@@ -16,7 +15,6 @@ function RestaurantListPage() {
   const [cuisineOptions, setCuisineOptions] = useState([]);
   const [countries, setCountries] = useState([]);
 
-  // Fetch data from the backend API
   const fetchData = () => {
     let url = `http://localhost:5000/restaurants?page=${page}`;
     if (country) url += `&country=${country}`;
@@ -43,7 +41,6 @@ function RestaurantListPage() {
       });
   };
 
-  // Fetch currencies from the backend API
   const fetchCurrencies = () => {
     fetch('http://localhost:5000/currencies')
       .then(response => response.json())
@@ -55,12 +52,11 @@ function RestaurantListPage() {
       });
   };
 
-  // Fetch cuisines from the backend API
   const fetchCuisines = () => {
     fetch('http://localhost:5000/cuisines')
       .then(response => response.json())
       .then(data => {
-        console.log('Fetched cuisines:', data);  // Add this line to debug
+        console.log('Fetched cuisines:', data);
         setCuisineOptions(data);
       })
       .catch(error => {
@@ -68,12 +64,11 @@ function RestaurantListPage() {
       });
   };
 
-  // Fetch countries from the backend API
   const fetchCountries = () => {
     fetch('http://localhost:5000/countries')
       .then(response => response.json())
       .then(data => {
-        console.log('Fetched countries:', data);  // Add this line to debug
+        console.log('Fetched countries:', data);
         setCountries(data);
       })
       .catch(error => {
@@ -81,12 +76,10 @@ function RestaurantListPage() {
       });
   };
 
-  // Fetch data whenever the dependencies change
   useEffect(() => {
     fetchData();
   }, [page, country, minCost, maxCost, cuisines, search, currency]);
 
-  // Fetch currencies, cuisines, and countries when the component mounts
   useEffect(() => {
     fetchCurrencies();
     fetchCuisines();
@@ -96,8 +89,6 @@ function RestaurantListPage() {
   return (
     <div className="container">
       <div className="header">
-        
-        
         <h1 className="logo">FindDine</h1>
       </div>
       <h1 className="title">Restaurant List</h1>

@@ -37,9 +37,7 @@ The application utilizes the following technologies:
 ### Execution
 
 1. Clone the repository
-    ```
-    git clone https://github.com/e42-typeface-ai/tf-round-2-assign-Nitin-Rajasekar.git
-    ````
+    
 
 
 2. Navigate to the 'Backend' directory
@@ -63,6 +61,12 @@ The application utilizes the following technologies:
     ```
     pip install -r requirements.txt
     ```
+5. Load the data into the SQLite database
+    Run the following command:
+    ```
+    python load_data.py
+    ```
+
 5. Run the Flask server
     Run the following command:
     ```
@@ -91,9 +95,7 @@ The application utilizes the following technologies:
 - The Web API Service to serve the loaded content is located at backend/app.py.
 - The user interface for the Restaurant List Page and Restaurant Detail Page may be accessed at frontend/src/components/RestaurantListPage.js and frontend/src/components/RestaurantDetailPage.js respectively.
 
-### Acknowledgements
 
-I would like to thank Typeface for providing the opportunity to work on this project.
 
 
 

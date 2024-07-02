@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); /* Import the 'Poppins' font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap'); /* Import the 'Poppins' and 'Pacifico' fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap');
 
 .container {
-  width: 80%; /* Set the width of the container to 80% of the parent element */
-  margin: auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding inside the container */
-  font-family: 'Poppins', sans-serif; /* Set the font family to 'Poppins' */
-  background: linear-gradient(135deg, #ff4081, #81d4fa); /* Add a linear gradient background */
-  border-radius: 12px; /* Add rounded corners */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-  color: #fff; /* Set text color to white */
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff4081, #81d4fa);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 .header {
@@ -24,67 +24,66 @@
   font-weight: 700;
   color: #fff;
   font-family: 'Pacifico', cursive;
-
 }
 
 .title {
-  text-align: center; /* Center-align the title */
-  color: #fff; /* Set title color to white */
-  font-size: 3em; /* Set font size of the title */
-  margin-bottom: 20px; /* Add margin below the title */
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 .detail {
-  background: rgba(255, 255, 255, 0.9); /* Set background color with transparency */
-  padding: 20px; /* Add padding inside the detail container */
-  border-radius: 12px; /* Add rounded corners */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
-  margin-bottom: 20px; /* Add margin below the detail container */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .detail p {
-  font-size: 1.2em; /* Set font size for paragraphs */
-  color: #333; /* Set text color to dark gray */
+  font-size: 1.2em;
+  color: #333;
 }
 
 .error {
-  color: #f44336; /* Set error message color to red */
-  text-align: center; /* Center-align the error message */
-  margin-bottom: 20px; /* Add margin below the error message */
-  font-weight: bold; /* Make the error message bold */
-  font-family: 'Poppins', sans-serif; /* Set font family to 'Poppins' */
+  color: #f44336;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
 
 .loading {
-  text-align: center; /* Center-align the loading message */
-  font-size: 1.5em; /* Set font size for the loading message */
-  color: #fff; /* Set text color to white */
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
 }
 
 .stars {
-  font-size: 1.2em; /* Set font size for stars */
-  color: #2a7ed1; /* Set star color to blue */
+  font-size: 1.2em;
+  color: #2a7ed1;
 }
 
 .statuses {
-  margin-top: 20px; /* Add margin above the statuses container */
+  margin-top: 20px;
 }
 
 .status-box {
-  display: inline-block; /* Display the status boxes inline */
-  padding: 10px 20px; /* Add padding inside the status boxes */
-  border-radius: 5px; /* Add rounded corners to the status boxes */
-  font-weight: bold; /* Make the text bold */
-  text-align: center; /* Center-align the text inside the status boxes */
-  margin-right: 10px; /* Add space between status boxes */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .status-box.green {
-  background-color: #4caf50; /* Set background color to green for positive status */
-  color: white; /* Set text color to white */
+  background-color: #4caf50;
+  color: white;
 }
 
 .status-box.red {
-  background-color: #f44336; /* Set background color to red for negative status */
-  color: white; /* Set text color to white */
+  background-color: #f44336;
+  color: white;
 }
