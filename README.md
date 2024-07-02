@@ -11,13 +11,6 @@ FindDine is a full-stack web application that manages and searches through resta
 ![FindDine](images/Details.png)
 
 
-### Demo Video
-
-An execution and demonstration video of the web application is available at the following link:
-
-https://drive.google.com/file/d/1EJ8ZU04CRCtsxQPTy4Z-W3aFn8qPqV79/view
-
-
 ### Tech Stack
 
 The application utilizes the following technologies:
